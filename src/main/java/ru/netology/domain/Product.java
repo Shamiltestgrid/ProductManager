@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,10 +15,8 @@ public class Product {
     private String name;
     private int price;
 
-    public Product(int id, String name, int price) {
+    public boolean matches(String search) {
+        return name.equals(search);
     }
 
-    public void getId() {
-    }
 }
-
